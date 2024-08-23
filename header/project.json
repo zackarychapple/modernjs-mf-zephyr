@@ -1,0 +1,52 @@
+{
+  "name": "header",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "header/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/rspack:rspack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "web",
+        "outputPath": "dist/header",
+        "main": "header/src/main.tsx",
+        "tsConfig": "header/tsconfig.app.json",
+        "rspackConfig": "header/rspack.config.js",
+        "assets": ["header/src/favicon.ico", "header/src/assets"]
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production",
+          "optimization": true,
+          "sourceMap": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/rspack:dev-server",
+      "options": {
+        "buildTarget": "header:build:development"
+      },
+      "configurations": {
+        "development": {},
+        "production": {
+          "buildTarget": "header:build:production"
+        }
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "header:build",
+        "spa": true
+      }
+    }
+  }
+}
