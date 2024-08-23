@@ -84,3 +84,4 @@ And join the Nx community:
 - `npx nx g @nx/react:app header`
 - `cd header && npx @modern-js/create@latest`
 - `cd host && npx @modern-js/create@latest`
+- `npm install --save @types/react`

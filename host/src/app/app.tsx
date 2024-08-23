@@ -1,9 +1,9 @@
-import NxWelcome from './nx-welcome';
-
+import ProviderButton from 'header/Button';
 export function App() {
   return (
     <div>
-      <NxWelcome title="host" />
+      <span>Test Host</span>
+      <ProviderButton/>
     </div>
   );
 }
