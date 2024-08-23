@@ -82,3 +82,5 @@ And join the Nx community:
 - `npx nx add @nx/react`
 - `npx nx g @nx/react:app host`
 - `npx nx g @nx/react:app header`
+- `cd header && npx @modern-js/create@latest`
+- `cd host && npx @modern-js/create@latest`

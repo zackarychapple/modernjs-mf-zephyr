@@ -1,20 +1,14 @@
 {
+  "extends": "@modern-js/tsconfig/base",
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "allowJs": false,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
-    "strict": true
-  },
-  "files": [],
-  "include": [],
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.spec.json"
+    "declaration": false,
+    "jsx": "preserve",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@shared/*": ["./shared/*"]
     }
-  ],
-  "extends": "../tsconfig.base.json"
+  },
+  "include": ["src", "shared", "config", "modern.config.ts"],
+  "exclude": ["**/node_modules"]
 }
